@@ -1,0 +1,660 @@
+[
+  {
+    "question": "What acts as a compressed, reusable state to make question generation a cheap read over the graph? [cite: 16]",
+    "expected_keywords": ["knowledge graph", "compressed", "reusable", "state"],
+    "expected_sources": []
+  },
+  {
+    "question": "Which specific external sources are used to instantiate the KNIGHT framework in the presented case study? [cite: 17]",
+    "expected_keywords": ["Wikipedia", "Wikidata", "ontology"],
+    "expected_sources": []
+  },
+  {
+    "question": "What are the five criteria used to evaluate the quality of the generated MCQ datasets? [cite: 19]",
+    "expected_keywords": [
+      "fluency",
+      "unambiguity",
+      "topic relevance",
+      "option uniqueness",
+      "answerability"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How does KNIGHT explicitly expose structure for curriculum customization compared to standard benchmarks like MMLU? [cite: 26]",
+    "expected_keywords": [
+      "multi-hop",
+      "structure",
+      "curriculum",
+      "customization"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What are the four stages executed by KNIGHT given a user topic and optional prompt? [cite: 29, 30, 32, 33]",
+    "expected_keywords": [
+      "knowledge graph",
+      "multi-hop",
+      "calibrate difficulty",
+      "filter items"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which specific LLM model is used for all generative calls throughout the KNIGHT pipeline? [cite: 37]",
+    "expected_keywords": ["GPT-4o-mini", "LLM", "calls"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does the pipeline handle the mapping function if defined over enterprise KGs instead of the Wikipedia/Wikidata ontology? [cite: 60]",
+    "expected_keywords": ["domain ontologies", "schemas", "mapping function"],
+    "expected_sources": []
+  },
+  {
+    "question": "What specific hardware was used to generate the items within minutes? [cite: 49]",
+    "expected_keywords": ["Google Colab T4", "hardware", "minutes"],
+    "expected_sources": []
+  },
+  {
+    "question": "Which zero-shot incremental framework is referenced as an LLM-powered entity/relation extraction tool? [cite: 55, 56]",
+    "expected_keywords": ["iText2KG", "zero-shot", "extraction"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does KNIGHT integrate RAG-based extraction and KG-guided generation into its pipeline? [cite: 34]",
+    "expected_keywords": ["reusable", "modular pipeline", "caches", "topic KG"],
+    "expected_sources": []
+  },
+  {
+    "question": "What components are used to define the directed property graph G in the Knowledge-Graph Constructor? [cite: 102]",
+    "expected_keywords": [
+      "canonicalized entities",
+      "labeled edges",
+      "property graph"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which threshold filter is utilized to remove near-duplicate triples before insertion? [cite: 131, 148]",
+    "expected_keywords": ["Levenshtein filter", "threshold", "near-duplicate"],
+    "expected_sources": []
+  },
+  {
+    "question": "What is the specific passage retrieval configuration used for the dense retriever and cross-encoder re-ranker? [cite: 134]",
+    "expected_keywords": [
+      "Contriever base",
+      "BM25-filtered",
+      "MiniLM-L12",
+      "top-50"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Under what condition does the system fall back to parametric generation for a candidate description? [cite: 139]",
+    "expected_keywords": ["no scores", "parametric generation", "fall back"],
+    "expected_sources": []
+  },
+  {
+    "question": "What overlap parameter threshold is used to ensure a node gloss is traceable to retrieved passages? [cite: 141]",
+    "expected_keywords": ["overlap parameter", "threshold", "0.35"],
+    "expected_sources": []
+  },
+  {
+    "question": "What format does the Relation Extractor prompt the LLM to emit for extracting facts? [cite: 146]",
+    "expected_keywords": ["JSON list", "head", "relation", "tail", "triples"],
+    "expected_sources": []
+  },
+  {
+    "question": "How is the graph expansion bounded to ensure no node exceeds the user-defined cognitive radius? [cite: 149]",
+    "expected_keywords": ["hardness budget", "breadth-first", "FIFO queue"],
+    "expected_sources": []
+  },
+  {
+    "question": "What specific NLI-based checks are applied by the Curator during graph expansion? [cite: 132, 150]",
+    "expected_keywords": [
+      "consistency checks",
+      "node glosses",
+      "relation statements"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which framework is used for the cross-encoder re-ranker refining the top-50 to k=5 passages? [cite: 134]",
+    "expected_keywords": ["MiniLM-L12", "cross-encoder", "re-ranker"],
+    "expected_sources": []
+  },
+  {
+    "question": "What algorithm is used to orchestrate the depth-bounded KG construction? [cite: 105]",
+    "expected_keywords": ["Algorithm 1", "GRAPHGENERATOR", "depth-bounded"],
+    "expected_sources": []
+  },
+  {
+    "question": "What two stages define the multi-hop MCQ generation process in KNIGHT? [cite: 153]",
+    "expected_keywords": [
+      "path-conditioned synthesis",
+      "validation",
+      "filtering"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How is the context template T(P) verbalized for the MCQ generator? [cite: 156]",
+    "expected_keywords": ["concatenating", "node glosses", "relation labels"],
+    "expected_sources": []
+  },
+  {
+    "question": "What specific components make up the MCQ tuple outputted by the generator? [cite: 156]",
+    "expected_keywords": [
+      "single-sentence stem",
+      "key",
+      "semantically proximate distractors"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which item-writing best practice criterion ensures that distractors do not overlap? [cite: 158]",
+    "expected_keywords": ["option uniqueness", "distractors", "overlap"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does the LLM-as-critic loop improve the pedagogical validity of the synthetic questions? [cite: 160]",
+    "expected_keywords": [
+      "factual fidelity",
+      "pedagogical validity",
+      "LLM-as-critic"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What provenance metadata is included when retained items are serialized as JSONL? [cite: 161]",
+    "expected_keywords": ["seed", "depth", "path", "orientation"],
+    "expected_sources": []
+  },
+  {
+    "question": "How are the forward and reverse paths enumerated for multi-hop synthesis? [cite: 155]",
+    "expected_keywords": ["length-d", "forward", "reverse paths", "hops"],
+    "expected_sources": []
+  },
+  {
+    "question": "In what format are the generated items serialized after validation? [cite: 161]",
+    "expected_keywords": ["JSONL", "serialized", "provenance metadata"],
+    "expected_sources": []
+  },
+  {
+    "question": "What is the exact condition required for a candidate MCQ to be retained by the validator? [cite: 159]",
+    "expected_keywords": ["all criteria pass", "retain", "TRUE"],
+    "expected_sources": []
+  },
+  {
+    "question": "Which tool is utilized to measure the predictive entropy of distractor choices? [cite: 250]",
+    "expected_keywords": [
+      "LLAMA 3.2-3B-Instruct",
+      "probe model",
+      "predictive entropy"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How many Level 3 MCQs are contained in the generated History dataset? [cite: 165]",
+    "expected_keywords": ["697", "Level 3", "History"],
+    "expected_sources": []
+  },
+  {
+    "question": "How many total Level 1 MCQs were generated for the Biology dataset? [cite: 166]",
+    "expected_keywords": ["323", "Level 1", "Biology"],
+    "expected_sources": []
+  },
+  {
+    "question": "Which five configurations are used to isolate component effects in the ablation study? [cite: 170]",
+    "expected_keywords": ["Plain", "RAG", "RAG+KG", "RAG+Val", "KNIGHT"],
+    "expected_sources": []
+  },
+  {
+    "question": "What shared retrieval step is used by all RAG-based variants to reduce hallucination? [cite: 169]",
+    "expected_keywords": [
+      "Wikipedia retrieval",
+      "evidence context",
+      "hallucination"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How is grammatical correctness quantitatively measured in the evaluation? [cite: 183]",
+    "expected_keywords": ["LanguageTool", "Grammar Quality", "detected errors"],
+    "expected_sources": []
+  },
+  {
+    "question": "What toolkit is used to automatically estimate textual fluency via normalized log-probabilities? [cite: 184]",
+    "expected_keywords": ["LangCheck", "fluency", "log-probabilities"],
+    "expected_sources": []
+  },
+  {
+    "question": "What was the exact wall-clock time for generating the Level 1 Mathematics dataset? [cite: 242]",
+    "expected_keywords": ["310s", "Mathematics", "Level 1"],
+    "expected_sources": []
+  },
+  {
+    "question": "What is the average total token usage per question across generation and validation stages? [cite: 245]",
+    "expected_keywords": ["600", "total tokens", "average"],
+    "expected_sources": []
+  },
+  {
+    "question": "Which configuration serves as the zero-evidence baseline for question generation? [cite: 170]",
+    "expected_keywords": ["Plain", "no evidence", "baseline"],
+    "expected_sources": []
+  },
+  {
+    "question": "How many Level 3 MCQs does the Mathematics dataset contain? [cite: 167]",
+    "expected_keywords": ["1063", "Mathematics", "Level 3"],
+    "expected_sources": []
+  },
+  {
+    "question": "What four specific error types were blinded domain experts instructed to flag during human evaluation? [cite: 191]",
+    "expected_keywords": [
+      "REPEATED",
+      "SINGLE_KEY",
+      "OPTION_UNIQUENESS",
+      "ANSWERABLE"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What does an ANSWERABLE violation indicate about a generated question? [cite: 194]",
+    "expected_keywords": [
+      "hallucination proxy",
+      "not derivable",
+      "supplied evidence"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which system variant exhibited the highest number of ANSWERABLE violations? [cite: 195]",
+    "expected_keywords": ["Plain", "highest", "ANSWERABLE violations"],
+    "expected_sources": []
+  },
+  {
+    "question": "What two complementary signals are used to assess the topical alignment of the generated questions? [cite: 200, 201]",
+    "expected_keywords": [
+      "MNLI-style entailment",
+      "LLM in few-shot mode",
+      "topical alignment"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How many items per system were audited by domain experts for the human evaluation? [cite: 191]",
+    "expected_keywords": ["100", "items", "audited"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does KNIGHT's error rate for SINGLE_KEY violations compare to the Plain baseline? [cite: 196]",
+    "expected_keywords": [
+      "cleanest",
+      "fewer ambiguity errors",
+      "strongest validity"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What is the off-topic rate computed from in the topical relevance evaluation? [cite: 237]",
+    "expected_keywords": ["union", "automated checks", "off-topic rate"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does the L3 difficulty setting affect the violation rates in the full KNIGHT system? [cite: 197]",
+    "expected_keywords": [
+      "does not substantially increase",
+      "difficulty control",
+      "sacrificing validity"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What equation is used to calculate the zero-shot MNLI-style entailment score for topic relevance? [cite: 236]",
+    "expected_keywords": [
+      "P(entailment | premise = T, hypothesis = q)",
+      "MNLI-style"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which LLM was utilized as a few-shot evaluator for topicality? [cite: 233]",
+    "expected_keywords": ["large LLM", "few-shot mode", "NLG practice"],
+    "expected_sources": []
+  },
+  {
+    "question": "How is distractor pull quantified using the LLAMA 3.2-3B-Instruct probe model? [cite: 250]",
+    "expected_keywords": [
+      "predictive entropy",
+      "answer choices",
+      "probe model"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What does a higher predictive entropy indicate about the distractors in an MCQ? [cite: 252]",
+    "expected_keywords": [
+      "non-trivial probability mass",
+      "stronger competition",
+      "harder items"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Why does the Plain baseline exhibit near-zero predictive entropy? [cite: 263]",
+    "expected_keywords": [
+      "degenerate",
+      "non-competitive distractors",
+      "near-zero"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How do RAG and RAG+VAL baselines perform in terms of inducing close distractors? [cite: 264]",
+    "expected_keywords": [
+      "near-zero",
+      "ceiling probe accuracy",
+      "does not reliably induce"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which domain exhibits the highest predictive entropy at Level 3? [cite: 267]",
+    "expected_keywords": ["Math", "highest entropy", "Level 3"],
+    "expected_sources": []
+  },
+  {
+    "question": "What is the exact mathematical formula used to calculate predictive entropy H? [cite: 251]",
+    "expected_keywords": ["negative sum", "p_i log p_i", "entropy"],
+    "expected_sources": []
+  },
+  {
+    "question": "What does a larger standard deviation in entropy at Level 3 suggest about difficulty diversity? [cite: 269]",
+    "expected_keywords": [
+      "broader",
+      "more realistic hardness spread",
+      "within-split difficulty"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which specific component is identified as the main driver of semantically proximate distractors? [cite: 265]",
+    "expected_keywords": ["KG-conditioned", "path-driven", "prompting"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does probe model accuracy correlate with predictive entropy across the difficulty levels? [cite: 252, 260]",
+    "expected_keywords": [
+      "lower probe accuracy",
+      "entropy increases",
+      "expected pattern"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What was the average probe accuracy for the Level 1 History dataset using KNIGHT? [cite: 254]",
+    "expected_keywords": ["86.83", "probe accuracy", "History", "Level 1"],
+    "expected_sources": []
+  },
+  {
+    "question": "Which standard MCQ benchmarks were used alongside KNIGHT for the cross-model comparative evaluation? [cite: 271]",
+    "expected_keywords": [
+      "MMLU",
+      "ARC",
+      "CSQA",
+      "RACE",
+      "MEDMCQA",
+      "OPENBOOKQA"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What protocol was adopted to mitigate MCQ selection bias during model benchmarking? [cite: 273]",
+    "expected_keywords": ["Open-LLM-Leaderboard", "protocol", "selection bias"],
+    "expected_sources": []
+  },
+  {
+    "question": "Which LLM achieved the highest benchmark average across the external suites? [cite: 278]",
+    "expected_keywords": ["GPT-4o", "highest", "benchmark average"],
+    "expected_sources": []
+  },
+  {
+    "question": "What was the human accuracy on the Level 3 Biology dataset? [cite: 256]",
+    "expected_keywords": ["97.40", "human", "accuracy", "Biology"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does Gemma (2B) perform on the Level 1 Math dataset compared to Mistral Large? [cite: 256]",
+    "expected_keywords": ["40.45", "95.07", "Gemma", "Mistral Large"],
+    "expected_sources": []
+  },
+  {
+    "question": "What does the convergent validity with established benchmarks suggest about KNIGHT's difficulty factors? [cite: 278]",
+    "expected_keywords": [
+      "general QA competence",
+      "not overfitting",
+      "predictive"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How does KNIGHT's caching of the KG represent a cost-quality trade-off compared to naive prompting? [cite: 280]",
+    "expected_keywords": [
+      "low marginal cost",
+      "frequent benchmark refresh",
+      "re-consume long contexts"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which benchmark provides standardized breadth in contrast to KNIGHT's topic-scoped evaluation? [cite: 281]",
+    "expected_keywords": ["MMLU", "standardized breadth", "wide-coverage"],
+    "expected_sources": []
+  },
+  {
+    "question": "What was Qwen1.5 (1.8B)'s accuracy on the KNIGHT average? [cite: 256]",
+    "expected_keywords": ["74.88", "Qwen1.5", "average"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does the performance of Llama3-70B-Instruct rank on the KNIGHT benchmark overall? [cite: 256, 258]",
+    "expected_keywords": ["3rd", "trailing Mistral", "ranking"],
+    "expected_sources": []
+  },
+  {
+    "question": "What effect does adding the validator without KG guidance have on predictive entropy? [cite: 288]",
+    "expected_keywords": [
+      "remains near zero",
+      "ceiling probe accuracy",
+      "does not strengthen"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How does retrieval grounding (Plain -> RAG) affect topical alignment? [cite: 285]",
+    "expected_keywords": [
+      "stabilizes",
+      "substantially reduces violations",
+      "alignment"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What happens to topical drift when KG guidance is applied without validation (RAG+KG)? [cite: 290]",
+    "expected_keywords": ["increase", "topical drift", "validity errors"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does the contrast between RAG+VAL and KNIGHT isolate the added value of KG structure? [cite: 294]",
+    "expected_keywords": [
+      "interpretable",
+      "reusable scaffold",
+      "induces competitive distractors"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What specific errors are sharply reduced by adding the validator to the RAG baseline? [cite: 287]",
+    "expected_keywords": ["REPEATED", "SINGLE_KEY", "OPTION_UNIQUENESS"],
+    "expected_sources": []
+  },
+  {
+    "question": "Why might KNIGHT's graph-based grounding provide less utility in domains like Physics? [cite: 462]",
+    "expected_keywords": [
+      "low relational density",
+      "numerical constants",
+      "equations"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How does the framework handle domains with low relational density? [cite: 462, 463]",
+    "expected_keywords": [
+      "less utility",
+      "calculation-heavy",
+      "interconnected"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What residual issue is measured by the ANSWERABLE audit flag despite grounding efforts? [cite: 464, 465]",
+    "expected_keywords": [
+      "residual hallucination",
+      "unsupported content",
+      "remains non-zero"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What factors beyond KG depth can affect the actual hardness of generated questions? [cite: 467]",
+    "expected_keywords": [
+      "linguistic complexity",
+      "domain prerequisites",
+      "multi-factorial"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What specific future work is proposed regarding adaptive difficulty tuning? [cite: 302]",
+    "expected_keywords": [
+      "model feedback",
+      "adaptive tuning",
+      "explainability"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "Which version of Neo4j is required to provide persistent KG storage for KNIGHT? [cite: 486]",
+    "expected_keywords": ["Neo4j 5.x", "persistent", "storage"],
+    "expected_sources": []
+  },
+  {
+    "question": "What configuration flag must be set to hot-swap a HuggingFace-compatible decoder? [cite: 493]",
+    "expected_keywords": ["lm_backend", "hf", "hot-swap"],
+    "expected_sources": []
+  },
+  {
+    "question": "How many distinct points must be included in the structured term explanation generated by the LLM? [cite: 518]",
+    "expected_keywords": ["8-point", "structure", "term explanations"],
+    "expected_sources": []
+  },
+  {
+    "question": "What exact phrase is the LLM instructed to output if a Wikipedia page title is ambiguous during relevance checking? [cite: 557]",
+    "expected_keywords": ["No", "ambiguous", "tangentially related"],
+    "expected_sources": []
+  },
+  {
+    "question": "In the GPT Triplet Extraction Prompt, what specific format must the extracted relations follow? [cite: 648]",
+    "expected_keywords": ["clear lowercase", "underscores", "format"],
+    "expected_sources": []
+  },
+  {
+    "question": "What five YES/NO tags must the MCQ Validation Assistant provide in its output? [cite: 683, 684, 686, 688, 690, 692]",
+    "expected_keywords": [
+      "GRAMMAR_FLUENCY",
+      "SINGLE_CORRECT_KEY",
+      "OPTION_UNIQUENESS",
+      "ANSWERABLE_FROM_SOURCE",
+      "TOPIC_RELEVANCE"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "How does the Term Extraction System Prompt define a 'bad' extraction example? [cite: 743, 744, 745, 746]",
+    "expected_keywords": [
+      "various aspects",
+      "complex functions",
+      "scientific study of life"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What environment variable must be exported to set the Neo4j connection URI? [cite: 487]",
+    "expected_keywords": ["NEO4J_URI", "export", "bolt"],
+    "expected_sources": []
+  },
+  {
+    "question": "How can a user run KNIGHT using purely memory instead of a persistent Neo4j instance? [cite: 490]",
+    "expected_keywords": ["backend", "memory", "constructor"],
+    "expected_sources": []
+  },
+  {
+    "question": "What specific constraint is placed on the base form of terms extracted by the baseline pipeline? [cite: 729]",
+    "expected_keywords": ["base form", "cell", "cells"],
+    "expected_sources": []
+  },
+  {
+    "question": "What is the specific chunk_size and chunk_overlap used by the recursive text splitter in the RAG components? [cite: 1200]",
+    "expected_keywords": [
+      "1000 tokens",
+      "100 tokens",
+      "recursive text splitter"
+    ],
+    "expected_sources": []
+  },
+  {
+    "question": "What is the maximum allowed length in characters for a Wikipedia snippet returned for node description generation? [cite: 1204]",
+    "expected_keywords": ["1000 characters", "snippet", "limit"],
+    "expected_sources": []
+  },
+  {
+    "question": "What temperature setting is recommended for the triplet extraction task to ensure deterministic output? [cite: 1191]",
+    "expected_keywords": ["0.1", "lower temperature", "focused extraction"],
+    "expected_sources": []
+  },
+  {
+    "question": "How many maximum branches are permitted by default during recursive graph expansion? [cite: 1214]",
+    "expected_keywords": ["2", "default value", "recursive graph expansion"],
+    "expected_sources": []
+  },
+  {
+    "question": "What equation defines the Formal Definition of Node Curation for filtering duplicate entities? [cite: 1089]",
+    "expected_keywords": ["Equiv(t',v)", "phi(t')", "curated subset"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does the Curator handle a candidate node if a semantic alias is detected? [cite: 1127]",
+    "expected_keywords": ["merged", "discarding", "re-attributing"],
+    "expected_sources": []
+  },
+  {
+    "question": "By what percentage does the multi-stage filtering prune candidate edges across domains? [cite: 1098]",
+    "expected_keywords": ["7.6%", "prunes", "candidate edges"],
+    "expected_sources": []
+  },
+  {
+    "question": "How does a reverse mode question frame its stem compared to a forward mode question? [cite: 1150, 1151]",
+    "expected_keywords": ["traversed backwards", "end node", "origins"],
+    "expected_sources": []
+  },
+  {
+    "question": "By how much does generating reverse questions empirically increase model entropy? [cite: 1153]",
+    "expected_keywords": ["15-20%", "increase", "model entropy"],
+    "expected_sources": []
+  },
+  {
+    "question": "What specific inter-annotator agreement threshold was exceeded across all domains? [cite: 890]",
+    "expected_keywords": ["0.82", "Fleiss' Kappa", "inter-annotator"],
+    "expected_sources": []
+  }
+]
