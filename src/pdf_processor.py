@@ -1,5 +1,8 @@
-import hashlib
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+import hashlib
 from typing import List
 from pypdf import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter

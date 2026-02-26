@@ -1,9 +1,20 @@
-from google import genai
+import os
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+import litellm
+from litellm import completion
 from typing import List, Tuple, Dict
 import config
 from src.vector_store import VectorStore, SummaryVectorStore
 from src.embedding import get_query_embedding
 from src.storage import SummaryStorage
+
+litellm.suppress_debug_info = True
+
+os.environ["OPENROUTER_API_KEY"] = config.OPENROUTER_API_KEY or ""
+os.environ["OPENROUTER_API_BASE"] = config.OPENROUTER_API_BASE
 
 
 class Retriever:
@@ -11,9 +22,6 @@ class Retriever:
         self.chunk_vector_store = chunk_vector_store
         self.summary_vector_store = summary_vector_store
         self.summary_storage = summary_storage
-        self.client = None
-        if config.GEMINI_API_KEY:
-            self.client = genai.Client(api_key=config.GEMINI_API_KEY)
         
     def retrieve(self, query: str, top_k: int = None) -> List[Dict]:
         k = top_k or config.TOP_K
@@ -37,29 +45,31 @@ class Retriever:
         return retrieved
     
     def generate_answer(self, query: str, context: List[Dict]) -> str:
-        if not self.client:
-            raise ValueError("GEMINI_API_KEY not set")
+        if not config.OPENROUTER_API_KEY:
+            raise ValueError("OPENROUTER_API_KEY not set")
         
         context_text = "\n\n".join([
             f"[Source {i+1}]: {item['summary']}"
             for i, item in enumerate(context)
         ])
         
-        prompt = f"""Based on the following context, answer the question. If the context doesn't contain enough information to answer, say so.
-
-Context:
-{context_text}
-
-Question: {query}
-
-Answer:"""
+        messages = [
+            {
+                "role": "system",
+                "content": "Based on the following context, answer the question. If the context doesn't contain enough information to answer, say so."
+            },
+            {
+                "role": "user",
+                "content": f"Context:\n{context_text}\n\nQuestion: {query}\n\nAnswer:"
+            }
+        ]
         
-        response = self.client.models.generate_content(
-            model=config.GEMINI_GENERATION_MODEL,
-            contents=prompt
+        response = completion(
+            model=config.GENERATION_MODEL,
+            messages=messages
         )
         
-        return response.text
+        return response.choices[0].message.content
     
     def query(self, query: str) -> Dict:
         context = self.retrieve(query)
